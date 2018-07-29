@@ -12,8 +12,8 @@ const app         = express()
 
 
 app.use(bodyParser.json())
-app.use(morgan('dev'))
 app.use(cors())
+app.use(morgan('dev'))
 app.use('/cars', carRoute)
 app.use('/mods', modRoute)
 
