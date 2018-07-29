@@ -10,13 +10,12 @@ const modRoute    = require('./routes/mods')
 const app         = express()
 
 
-app.use('/cars', carRoute)
-app.use('/mods', modRoute)
 
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(morgan(process.env.NODE_ENV !== 'production' ? 'dev' : 'combined'))
-app.use(cors({origin: true, credentials: true}))
+app.use(morgan('dev'))
+app.use(cors())
+app.use('/cars', carRoute)
+app.use('/mods', modRoute)
 
 app.use((req, res, next) => {
   const err = new Error("Not Found")
