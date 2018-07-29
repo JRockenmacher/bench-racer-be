@@ -1,13 +1,165 @@
+const data = [{
+  id: 1,
+  brakes: 100,
+  suspension: 1000,
+  tire_wheel: 1500,
+  intake: 0,
+  exhaust: 600,
+  fuel_system: 800,
+  ignition: 300,
+  cooling: 900,
+  lubrication: 1500,
+  top_end: 0,
+  bottom_end: 0,
+  drivetrain: 2000,
+  engine_management: 3000,
+  engine_swap: 1200,
+  forced_induction: 2000,
+  aero: 3000,
+  catch_all: 500
+}, {
+  id: 2,
+  brakes: 1500,
+  suspension: 5000,
+  tire_wheel: 1200,
+  intake: 1600,
+  exhaust: 1800,
+  fuel_system: 400,
+  ignition: 800,
+  cooling: 500,
+  lubrication: 4000,
+  top_end: 2000,
+  bottom_end: 2000,
+  drivetrain: 2500,
+  engine_management: 1500,
+  engine_swap: 400,
+  forced_induction: 0,
+  aero: 3500,
+  catch_all: 1000
+}, {
+  id: 3,
+  brakes: 1500,
+  suspension: 5000,
+  tire_wheel: 1800,
+  intake: 1500,
+  exhaust: 1800,
+  fuel_system: 400,
+  ignition: 300,
+  cooling: 500,
+  lubrication: 4000,
+  top_end: 1800,
+  bottom_end: 1500,
+  drivetrain: 2500,
+  engine_management: 1800,
+  engine_swap: 4000,
+  forced_induction: 0,
+  aero: 3500,
+  catch_all: 1000
+},{
+  id: 4,
+  brakes: 800,
+  suspension: 6000,
+  tire_wheel: 2000,
+  intake: 300,
+  exhaust: 1800,
+  fuel_system: 600,
+  ignition: 300,
+  cooling: 1900,
+  lubrication: 6000,
+  top_end: 1800,
+  bottom_end: 1800,
+  drivetrain: 4000,
+  engine_management: 4000,
+  engine_swap: 3000,
+  forced_induction: 4000,
+  aero: 3000,
+  catch_all: 2500
+}, {
+  id: 5,
+  brakes: 800,
+  suspension: 1000,
+  tire_wheel: 1200,
+  intake: 800,
+  exhaust: 800,
+  fuel_system: 0,
+  ignition: 300,
+  cooling: 800,
+  lubrication: 500,
+  top_end: 1200,
+  bottom_end: 1200,
+  drivetrain: 1500,
+  engine_management: 2000,
+  engine_swap: 0,
+  forced_induction: 0,
+  aero: 1000,
+  catch_all: 1000
+}, {
+  id: 6,
+  brakes: 800,
+  suspension: 1000,
+  tire_wheel: 1400,
+  intake: 300,
+  exhaust: 1200,
+  fuel_system: 600,
+  ignition: 800,
+  cooling: 1200,
+  lubrication: 800,
+  top_end: 1200,
+  bottom_end: 1200,
+  drivetrain: 1800,
+  engine_management: 800,
+  engine_swap: 1200,
+  forced_induction: 1400,
+  aero: 800,
+  catch_all: 800
+}, 
+// {
+//   id: ,
+//   brakes: ,
+//   suspension: ,
+//   tire_wheel: ,
+//   intake: ,
+//   exhaust: ,
+//   fuel_system: ,
+//   ignition: ,
+//   cooling: ,
+//   lubrication: ,
+//   top_end: ,
+//   bottom_end: ,
+//   drivetrain: ,
+//   engine_management: ,
+//   engine_swap: ,
+//   forced_induction: ,
+//   aero: ,
+//   catch_all: 0
+// }, 
+// {
+// id: ,
+// brakes: ,
+// suspension: ,
+//   tire_wheel: ,
+//   intake: ,
+//   exhaust: ,
+//   fuel_system: ,
+//   ignition: ,
+//   cooling: ,
+//   lubrication: ,
+//   top_end: ,
+//   bottom_end: ,
+//   drivetrain: ,
+//   engine_management: ,
+//   engine_swap: ,
+//   forced_induction: ,
+//   aero: ,
+//   catch_all: 0
+// }
+]
+
 
 exports.seed = function(knex, Promise) {
-  // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('mods').del()
     .then(function () {
-      // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
-      ]);
-    });
-};
+      return knex('mods').insert(data)
+    })
+    .then( () => knex.raw(`ALTER SEQUENCE mods_id_seq RESTART WITH ${data.length + 1};`))
+}

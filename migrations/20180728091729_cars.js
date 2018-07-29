@@ -3,10 +3,10 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('cars', table => {
       table.increments()
       table.text('name')
-      table.number('year')
+      table.integer('year')
       table.text('make')
       table.text('model')
-      table.text('submodel').defaultsTo(null)
+      table.text('sub_model').defaultsTo(null)
       table.text('drive_layout')
       table.text('color')
       
