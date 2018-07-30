@@ -35,25 +35,26 @@ const data = [{
   sub_model: '986',
   drive_layout: 'MR',
   color: 'silver'
-},{
-  id: 5,
-  name: 'Eckmeister',
-  year: 1991,
-  make: 'BMW',
-  model: 'M3',
-  sub_model: 'Evo',
-  drive_layout: 'FR',
-  color: 'red'
-}, {
-  id: 6,
-  name: 'Lucky',
-  year: 1988,
-  make: 'Mitsubishi',
-  model: 'Starion',
-  sub_model: null,
-  drive_layout: 'FR',
-  color: 'cosmos-black'
-}, 
+}
+//,{
+//   id: 5,
+//   name: 'Eckmeister',
+//   year: 1991,
+//   make: 'BMW',
+//   model: 'M3',
+//   sub_model: 'Evo',
+//   drive_layout: 'FR',
+//   color: 'red'
+// }, {
+//   id: 6,
+//   name: 'Lucky',
+//   year: 1988,
+//   make: 'Mitsubishi',
+//   model: 'Starion',
+//   sub_model: null,
+//   drive_layout: 'FR',
+//   color: 'cosmos-black'
+// }, 
 // {
 //   id: ,
 //   name: '',

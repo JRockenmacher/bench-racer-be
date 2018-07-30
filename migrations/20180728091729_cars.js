@@ -6,9 +6,9 @@ exports.up = function(knex, Promise) {
       table.integer('year')
       table.text('make')
       table.text('model')
-      table.text('sub_model').defaultsTo(null)
+      table.text('sub_model').defaultsTo('')
       table.text('drive_layout')
-      table.text('color')
+      table.text('color').defaultsTo('')
       
   })
 };
