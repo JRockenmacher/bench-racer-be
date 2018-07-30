@@ -18,7 +18,7 @@ module.exports = {
         .innerJoin('mods', 'cars.id', 'mods.car_id' )
         .select()
         .where('cars.id', id)
-        // .first()
+        .first()
     },
     updateCar(id, car){
         return database('cars')
@@ -36,7 +36,7 @@ module.exports = {
     listMods(carId){
         return database('mods')
         .select()
-        .where('car_id', carId)
+        .where('mods.car_id', carId)
     },
     createMod(mod){
         return database('mods')
@@ -47,8 +47,8 @@ module.exports = {
     readMod(id){
         return database('mods')
         .select()
-        .where('id', id)
-        .first()
+        .where('car_id', id)
+        // .first()
     },
     updateMod(id, mod){
         return database('mods')
