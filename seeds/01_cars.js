@@ -7,7 +7,8 @@ const data = [{
   model: 'S-13',
   sub_model: 'S-14 Sil-Eighty',
   drive_layout: 'FR',
-  color: 'battleship-grey'
+  color: 'battleship-grey',
+  car_mod_id: 1
 }, {
   id: 2,
   name: 'Scrappy-Dos',
@@ -16,7 +17,8 @@ const data = [{
   model: 'MR2',
   sub_model: 'kouki',
   drive_layout: 'MR',
-  color: 'red-panda' 
+  color: 'red-panda',
+  car_mod_id: 2 
 }, {
   id: 3,
   name: 'Huxley',
@@ -25,7 +27,8 @@ const data = [{
   model: 'MR2',
   sub_model: 'Zenki',
   drive_layout: 'MR',
-  color: 'smg'
+  color: 'smg',
+  car_mod_id: 3
 }, {
   id: 4,
   name: 'Bekutoru',
@@ -34,27 +37,31 @@ const data = [{
   model: 'Boxster',
   sub_model: '986',
   drive_layout: 'MR',
-  color: 'silver'
+  color: 'silver',
+  car_mod_id: 4
 }
-//,{
-//   id: 5,
-//   name: 'Eckmeister',
-//   year: 1991,
-//   make: 'BMW',
-//   model: 'M3',
-//   sub_model: 'Evo',
-//   drive_layout: 'FR',
-//   color: 'red'
-// }, {
-//   id: 6,
-//   name: 'Lucky',
-//   year: 1988,
-//   make: 'Mitsubishi',
-//   model: 'Starion',
-//   sub_model: null,
-//   drive_layout: 'FR',
-//   color: 'cosmos-black'
-// }, 
+,{
+  id: 5,
+  name: 'Eckmeister',
+  year: 1991,
+  make: 'BMW',
+  model: 'M3',
+  sub_model: 'Evo',
+  drive_layout: 'FR',
+  color: 'red',
+  car_mod_id: 5
+}, 
+{
+  id: 6,
+  name: 'Lucky',
+  year: 1988,
+  make: 'Mitsubishi',
+  model: 'Starion',
+  sub_model: '',
+  drive_layout: 'FR',
+  color: 'cosmos-black',
+  car_mod_id: 6
+}, 
 // {
 //   id: ,
 //   name: '',
@@ -63,7 +70,8 @@ const data = [{
 //   model: '',
 //   sub_model: '',
 //   drive_layout: '',
-//   color: ''
+//   color: '',
+// car_mod_id: 
 // }
 ]
 

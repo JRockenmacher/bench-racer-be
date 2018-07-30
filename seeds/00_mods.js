@@ -279,78 +279,148 @@ const data = [{
     cost: 2500
   }
 }, 
-// {
-//   id: 5,
-//   brakes: {
-//     description: 'custom boxster kit',
-//     cost: 800
-//   },
-//   suspension: {
-//     description: 'Koni/H&R',
-//     cost: 1000 
-//   },
-//   tire_wheel: {
-//     description: '16x8 BBS with 225 R615K',
-//     cost: 1200 
-//   },
-//   intake: {
-//     description: 'custom surge tank and velocity stacks',
-//     cost: 800
-//   },
-//   exhaust: {
-//     description: 'custom header-back',
-//     cost: 800
-//   },
-//   fuel_system: {
-//     description: '',
-//     cost: 0 
-//   },
-//   ignition: {
-//     description: 'plugs, refresh',
-//     cost: 300
-//   },
-//   cooling: {
-//     description: 'radiator and hoses',
-//     cost: 800
-//   },
-//   lubrication: {
-//     description: 'oil cooler kit, baffled pan',
-//     cost: 500
-//   },
-//   top_end: {
-//     description: 'cams, headwork',
-//     cost: 1200 
-//   },
-//   bottom_end: {
-//     description: '',
-//     cost: 1200
-//   },
-//   drivetrain: 1500,
-//   engine_management: 2000,
-//   engine_swap: 0,
-//   forced_induction: 0,
-//   aero: 1000,
-//   catch_all: 1000
-// }, {
-//   id: 6,
-//   brakes: 800,
-//   suspension: 1000,
-//   tire_wheel: 1400,
-//   intake: 300,
-//   exhaust: 1200,
-//   fuel_system: 600,
-//   ignition: 800,
-//   cooling: 1200,
-//   lubrication: 800,
-//   top_end: 1200,
-//   bottom_end: 1200,
-//   drivetrain: 1800,
-//   engine_management: 800,
-//   engine_swap: 1200,
-//   forced_induction: 1400,
-//   aero: 800,
-//   catch_all: 800
-// }, 
+{
+  id: 5,
+  brakes: {
+    description: 'custom boxster kit',
+    cost: 800
+  },
+  suspension: {
+    description: 'Koni/H&R',
+    cost: 1000 
+  },
+  tire_wheel: {
+    description: '16x8 BBS with 225 R615K',
+    cost: 1200 
+  },
+  intake: {
+    description: 'custom surge tank and velocity stacks',
+    cost: 800
+  },
+  exhaust: {
+    description: 'custom header-back',
+    cost: 800
+  },
+  fuel_system: {
+    description: '',
+    cost: 0 
+  },
+  ignition: {
+    description: 'plugs, refresh',
+    cost: 300
+  },
+  cooling: {
+    description: 'radiator and hoses',
+    cost: 800
+  },
+  lubrication: {
+    description: 'oil cooler kit, baffled pan',
+    cost: 500
+  },
+  top_end: {
+    description: 'cams, headwork',
+    cost: 1200 
+  },
+  bottom_end: {
+    description: 'piston and rod combo, balanced rotating assembly',
+    cost: 1200
+  },
+  drivetrain: {
+    description: 'lsd, clutch' ,
+    cost: 1200
+  },
+  engine_management: {
+    description: 'Haltech Elite 1500 and tune',
+    cost: 2000
+  },
+  engine_swap: {
+    description: '',
+    cost: 0
+  },
+  forced_induction: {
+    description: '',
+    cost: 0
+  },
+  aero: {
+    description: 'lip and wing',
+    cost: 1200
+  },
+  catch_all: {
+    description: '',
+    cost: 100
+  }
+}, 
+{
+  id: 6,
+  brakes: {
+    description: 'Evo bbk upgrade',
+    cost: 900
+  },
+  suspension: {
+    description: 'Koni/Eibach',
+    cost: 1000
+  },
+  tire_wheel: {
+    description: '17x10 RPF-1 and 255 R615k',
+    cost: 1400
+  },
+  intake: {
+    description: 'basic turbo plumbing',
+    cost: 300
+  },
+  exhaust: {
+    description: 'custom header back',
+    cost: 1200
+  },
+  fuel_system: {
+    description: 'basic upgrades to handle power',
+    cost: 600
+  },
+  ignition: {
+    description: 'LS-X coils and cusotom wires',
+    cost: 800
+  },
+  cooling: {
+    description: 'radiator and hoses',
+    cost: 800
+  },
+  lubrication: {
+    description: 'oil cooler kit, baffle pan',
+    cost: 800
+  },
+  top_end: {
+    description: 'head work and mild cams',
+    cost: 1200
+  },
+  bottom_end: {
+    description: 'piston and rod combo, machine work',
+    cost: 1200
+  },
+  drivetrain: {
+    description: 'clutch, lsd, shifter',
+    cost: 1800
+  },
+  engine_management: {
+    description: 'evo ecu',
+    cost: 800
+  },
+  engine_swap: {
+    description: '4G64 FR motor, Evo7 head',
+    cost: 2500
+  },
+  forced_induction: {
+    description: 'upgraded turbo and lines',
+    cost: 1800
+  },
+  aero: {
+    description: 'misc body and spoilers',
+    cost: 1000
+  },
+  catch_all: {
+    description: '',
+    cost: 800
+  }
+}, 
 // {
 //   id: ,
 //   brakes: {
@@ -421,26 +491,6 @@ const data = [{
 //     description: '',
 //     cost: 0
 //   }
-// }, 
-// {
-// id: ,
-// brakes: ,
-// suspension: ,
-//   tire_wheel: ,
-//   intake: ,
-//   exhaust: ,
-//   fuel_system: ,
-//   ignition: ,
-//   cooling: ,
-//   lubrication: ,
-//   top_end: ,
-//   bottom_end: ,
-//   drivetrain: ,
-//   engine_management: ,
-//   engine_swap: ,
-//   forced_induction: ,
-//   aero: ,
-//   catch_all: 0
 // }
 ]
 

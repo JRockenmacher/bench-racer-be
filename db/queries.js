@@ -9,9 +9,13 @@ module.exports = {
         .insert(car)
         .returning('*')
         .then(record => record[0])
+
+        //lookup knex joins query 
     },
     readCar(id){
+        // return knex.from('cars')
         return database('cars')
+        .innerJoin('mods', 'cars.id', 'mods.car_mod_id' )
         .select()
         .where('id', id)
         .first()
