@@ -15,9 +15,9 @@ module.exports = {
     readCar(id){
         // return knex.from('cars')
         return database('cars')
-        .innerJoin('mods', 'cars.id', 'mods.car_mod_id' )
+        .innerJoin('mods', 'cars.id', 'mods.car_id' )
         .select()
-        .where('id', id)
+        .where('cars.id', id)
         .first()
     },
     updateCar(id, car){
@@ -33,8 +33,10 @@ module.exports = {
         .where('id', id)
     },
 
-    listMods(){
+    listMods(carId){
         return database('mods')
+        .select()
+        .where('car_id', carId)
     },
     createMod(mod){
         return database('mods')
