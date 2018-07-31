@@ -35,10 +35,9 @@ module.exports = {
         .select()
         .where('car_id', id)
     },
-    getModsByCategory(id, category){
+    getModsByCategory(category){
         return database('mods')
         .select()
-        .where('car_id', id)
         .where('category', category)
     },
     createMod(mod){

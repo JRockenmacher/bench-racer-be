@@ -17,14 +17,16 @@ router.get("/:id", (request, response, next) => {
     }).catch(next);
 });
 
-router.get(":/category", (req, res, next) => {
-    queries.getModsByCategory(req.params.category)
+router.get("/:id/:category", (req, res, next) => {
+    queries.getModsByCategory(req.params.id, req.params.category)
     .then(mod => {
         mod
         ? res.json({mod})
         : res.status(404).json({message: 'Mod category not found'})
     }).catch(next);
 });
+
+// look up sum and group operators to crunch sums per category and put in queries
 
 router.post("/", (request, response, next) => {
     queries.createMod(request.body).then(mod => {
