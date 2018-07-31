@@ -9,11 +9,8 @@ module.exports = {
         .insert(car)
         .returning('*')
         .then(record => record[0])
-
-        //lookup knex joins query 
     },
-    readCar(id){
-        // return knex.from('cars')
+    readCar(id){  
         return database('cars')
         .innerJoin('mods', 'cars.id', 'mods.car_id' )
         .select()
@@ -33,10 +30,16 @@ module.exports = {
         .where('id', id)
     },
 
-    listMods(carId){
+    listModsByCar(id){
         return database('mods')
         .select()
-        .where('mods.car_id', carId)
+        .where('car_id', id)
+    },
+    getModsByCategory(id, category){
+        return database('mods')
+        .select()
+        .where('car_id', id)
+        .where('category', category)
     },
     createMod(mod){
         return database('mods')
@@ -48,7 +51,7 @@ module.exports = {
         return database('mods')
         .select()
         .where('car_id', id)
-        // .first()
+        
     },
     updateMod(id, mod){
         return database('mods')
@@ -62,4 +65,4 @@ module.exports = {
         .delete()
         .where('id', id)
     }
-};
+}

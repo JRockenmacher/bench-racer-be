@@ -17,6 +17,15 @@ router.get("/:id", (request, response, next) => {
     }).catch(next);
 });
 
+router.get(":/category", (req, res, next) => {
+    queries.getModsByCategory(req.params.category)
+    .then(mod => {
+        mod
+        ? res.json({mod})
+        : res.status(404).json({message: 'Mod category not found'})
+    }).catch(next);
+});
+
 router.post("/", (request, response, next) => {
     queries.createMod(request.body).then(mod => {
         response.status(201).json({mod});

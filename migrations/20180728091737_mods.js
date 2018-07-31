@@ -2,8 +2,9 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('mods', table => {
       table.increments()
-      table.integer('car_id')
-      table.string('category')
+      table.integer('car_id').references('cars.id').unsigned().onDelete('CASCADE')
+      table.string('category').notNullable()
+      table.string('sub_category')
       table.string('description')
       table.integer('cost')
   })
