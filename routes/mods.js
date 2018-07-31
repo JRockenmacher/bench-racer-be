@@ -17,8 +17,8 @@ router.get("/:id", (request, response, next) => {
     }).catch(next);
 });
 
-router.get("/:id/:category", (req, res, next) => {
-    queries.getModsByCategory(req.params.id, req.params.category)
+router.get("/:car_id/:category", (req, res, next) => {
+    queries.getModsByCategory(req.params.car_id, req.params.category)
     .then(mod => {
         mod
         ? res.json({mod})
