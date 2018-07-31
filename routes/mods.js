@@ -26,7 +26,7 @@ router.get("/:car_id/:category", (req, res, next) => {
     }).catch(next);
 });
 
-router.get("/:car_id/:category/:sum", (req, res, next) => {
+router.get("/:car_id/:category/sum", (req, res, next) => {
     queries.sumModsInCategory(req.params.car_id, req.params.category, req.params.cost)
     .then(mod => {
         mod
