@@ -18,7 +18,16 @@ router.get("/:id", (request, response, next) => {
 });
 
 router.get("/:car_id/:category", (req, res, next) => {
-    queries.getModsByCategory(req.params.car_id, req.params.category)
+    queries.getModsByCarAndCategory(req.params.car_id, req.params.category)
+    .then(mod => {
+        mod
+        ? res.json({mod})
+        : res.status(404).json({message: 'Mod category not found'})
+    }).catch(next);
+});
+
+router.get("/:category", (req, res, next) => {
+    queries.getModsByCategory(req.params.category)
     .then(mod => {
         mod
         ? res.json({mod})

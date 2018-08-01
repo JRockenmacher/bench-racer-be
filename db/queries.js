@@ -35,11 +35,16 @@ module.exports = {
         .select()
         .where('car_id', car_id)
     },
-    getModsByCategory(car_id, category){
+    getModsByCarAndCategory(car_id, category){
         return database('mods')
         .select()
         .where('car_id', car_id)
         .andWhere('category', category)
+    },
+    getModsByCategory(category){
+        return database('mods')
+        .select()
+        .where('category', category)
     },
     createMod(mod){
         return database('mods')
