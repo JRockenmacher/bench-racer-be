@@ -9,13 +9,13 @@ router.get("/", (request, response, next) => {
     }).catch(next);
 });
 
-// router.get("/:id", (request, response, next) => {
-//     queries.readMod(request.params.id).then(mod => {
-//         mod
-//             ? response.json({mod})
-//             : response.status(404).json({message: 'Mod not found'})
-//     }).catch(next);
-// });
+router.get("/:id", (request, response, next) => {
+    queries.readMod(request.params.id).then(mod => {
+        mod
+            ? response.json({mod})
+            : response.status(404).json({message: 'Mod not found'})
+    }).catch(next);
+});
 
 router.get("/:car_id/:category", (req, res, next) => {
     queries.getModsByCarAndCategory(req.params.car_id, req.params.category)
@@ -26,14 +26,14 @@ router.get("/:car_id/:category", (req, res, next) => {
     }).catch(next);
 });
 
-router.get("/:category", (req, res, next) => {
-    queries.getModsByCategory(req.params.category)
-    .then(mod => {
-        mod
-        ? res.json({mod})
-        : res.status(404).json({message: 'Mod category not found'})
-    }).catch(next);
-});
+// router.get("/:category", (req, res, next) => {
+//     queries.getModsByCategory(req.params.category)
+//     .then(mod => {
+//         mod
+//         ? res.json({mod})
+//         : res.status(404).json({message: 'Mod category not found'})
+//     }).catch(next);
+// });
 
 router.get("/:car_id/:category/sum", (req, res, next) => {
     queries.sumModsOfOneInCategory(req.params.car_id, req.params.category, req.params.cost)
@@ -44,14 +44,14 @@ router.get("/:car_id/:category/sum", (req, res, next) => {
     }).catch(next);
 })
 
-router.get("/:category/sum", (req, res, next) => {
-    queries.sumModsInCategory(req.params.category, req.params.cost)
-    .then(mod => {
-        mod
-        ? res.json({mod})
-        : res.status(404).json({message: 'Mod category not found'})
-    }).catch(next);
-})
+// router.get("/:category/sum", (req, res, next) => {
+//     queries.sumModsInCategory(req.params.category, req.params.cost)
+//     .then(mod => {
+//         mod
+//         ? res.json({mod})
+//         : res.status(404).json({message: 'Mod category not found'})
+//     }).catch(next);
+// })
 
 // look up sum and group operators to crunch sums per category and put in queries
 
