@@ -7,6 +7,7 @@ const morgan      = require('morgan')
 const cors        = require('cors')
 const carRoute    = require('./routes/cars')
 const modRoute    = require('./routes/mods')
+const metricsRoute = require('./routes/metrics')
 const app         = express()
 
 
@@ -16,6 +17,7 @@ app.use(cors())
 app.use(morgan('dev'))
 app.use('/cars', carRoute)
 app.use('/mods', modRoute)
+app.use('/metrics', metricsRoute)
 
 app.use((req, res, next) => {
   const err = new Error("Not Found")
