@@ -34,11 +34,11 @@ module.exports = {
         return database('mods')        
     },
 
-    listModsByCar(car_id){
-        return database('mods')
-        .select()
-        .where('car_id', car_id)
-    },
+    // listModsByCar(car_id){
+    //     return database('mods')
+    //     .select()
+    //     .where('car_id', car_id)
+    // },
     getModsByCarAndCategory(car_id, category){
         return database('mods')
         .select()
