@@ -45,11 +45,6 @@ module.exports = {
         .where('car_id', car_id)
         .andWhere('category', category)
     },
-    getModsByCategory(category){
-        return database('mods')
-        .select()
-        .where('category', category)
-    },
     createMod(mod){
         return database('mods')
         .insert(mod)
@@ -81,6 +76,11 @@ module.exports = {
         .andWhere("category", category)
         .sum('cost', cost)
         .groupBy('category')
+    },
+    getModsByCategory(category){
+        return database('mods')
+        .select()
+        .where('category', category)
     },
     sumModsInCategory(category, cost) {
         return database('mods')
