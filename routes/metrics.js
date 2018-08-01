@@ -26,3 +26,5 @@ router.get("/:category/sum", (req, res, next) => {
         : res.status(404).json({message: 'Mod category not found'})
     }).catch(next);
 })
+
+module.exports = router
