@@ -30,6 +30,10 @@ module.exports = {
         .where('id', id)
     },
 
+    listMods(){
+        return database('mods')        
+    },
+
     listModsByCar(car_id){
         return database('mods')
         .select()
