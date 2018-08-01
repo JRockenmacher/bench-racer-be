@@ -27,7 +27,16 @@ router.get("/:car_id/:category", (req, res, next) => {
 });
 
 router.get("/:car_id/:category/sum", (req, res, next) => {
-    queries.sumModsInCategory(req.params.car_id, req.params.category, req.params.cost)
+    queries.sumModsOfOneInCategory(req.params.car_id, req.params.category, req.params.cost)
+    .then(mod => {
+        mod
+        ? res.json({mod})
+        : res.status(404).json({message: 'Mod category not found'})
+    }).catch(next);
+})
+
+router.get(":category/sum", (req, res, next) => {
+    queries.sumModsInCategory(req.params.category, req.params.cost)
     .then(mod => {
         mod
         ? res.json({mod})

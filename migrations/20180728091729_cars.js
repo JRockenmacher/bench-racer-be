@@ -8,7 +8,8 @@ exports.up = function(knex, Promise) {
       table.text('model')
       table.text('sub_model').defaultsTo('')
       table.text('drive_layout')
-      table.text('color').defaultsTo('')      
+      table.text('color').defaultsTo('')
+      table.text('image').defaultsTo('Photo Coming Soon')      
   })
 };
 

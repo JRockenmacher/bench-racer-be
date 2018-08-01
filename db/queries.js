@@ -65,11 +65,18 @@ module.exports = {
         .delete()
         .where('id', id)
     },
-    sumModsInCategory(car_id, category, cost) {
+    sumModsOfOneInCategory(car_id, category, cost) {
         return database('mods')
         .select()
         .where('car_id', car_id)
         .andWhere("category", category)
+        .sum('cost', cost)
+        .groupBy('category')
+    },
+    sumModsInCategory(category, cost) {
+        return database('mods')
+        .select()
+        .where("category", category)
         .sum('cost', cost)
         .groupBy('category')
     }
