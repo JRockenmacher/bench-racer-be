@@ -78,9 +78,10 @@ const data = [{
 
 
 exports.seed = function(knex, Promise) {
-  return knex('cars').del()
+  // return knex('cars').del()
+  return knex.raw(`DELETE FROM "cars"; ALTER SEQUENCE cars_id_seq RESTART WITH ${data.length + 1};`)
     .then(function () {
       return knex('cars').insert(data)
     })
-    .then( () => knex.raw(`ALTER SEQUENCE cars_id_seq RESTART WITH ${data.length + 1};`))
+    // .then( () => knex.raw(`ALTER SEQUENCE cars_id_seq RESTART WITH ${data.length + 1};`))
 }

@@ -12,7 +12,7 @@ module.exports = {
     },
     readCar(id){  
         return database('cars')
-        .innerJoin('mods', 'cars.id', 'mods.car_id' )
+        // .innerJoin('mods', 'cars.id', 'mods.car_id' )
         .select()
         .where('cars.id', id)
         // .first()
