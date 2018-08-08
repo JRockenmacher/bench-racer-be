@@ -88,5 +88,24 @@ module.exports = {
         .where("category", category)
         .sum('cost', cost)
         .groupBy('category')
+    },
+    getCarsWithMods(){
+        return database('cars')
+           .then(cars => {
+               return Promise.all(cars.map(car => {
+                    return database('mods')
+                       .where('car_id', car.id)
+                       .then(mods => {
+                           car.modsList = mods
+                           console.log("car with mods", car)
+                           return car
+                       })
+               }))
+               
+           })   
+    },
+    getModsByCar(car_id){
+        return database('mods')
+        .where('car_id', car_id)
     }
 }

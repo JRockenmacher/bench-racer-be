@@ -61,7 +61,7 @@ router.post("/", (request, response, next) => {
     }).catch(next);
 });
 
-router.delete("/:id", (request, response, next) => {
+router.delete(":id", (request, response, next) => {
     queries.deleteMod(request.params.id).then(() => {
         response.status(204).json({deleted: true});
     }).catch(next);

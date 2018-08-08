@@ -9,6 +9,17 @@ router.get("/", (request, response, next) => {
     }).catch(next);
 });
 
+router.get("/mods", (req, res, next) => {
+    queries.getCarsWithMods().then(cars => {
+        res.json({cars})
+    }).catch(next)
+})
+router.get("/mods/:car_id", (req, res, next) => {
+    queries.getModsByCar(req.params.car_id)
+    .then(mods => res.json({mods}))
+    .catch(next)
+})
+
 router.get("/:id", (request, response, next) => {
     queries.readCar(request.params.id).then(car => {
         car
@@ -17,7 +28,9 @@ router.get("/:id", (request, response, next) => {
     }).catch(next);
 });
 
+
 router.post("/", (request, response, next) => {
+    console.log(request.body)
     queries.createCar(request.body).then(car => {
         response.status(201).json({car});
     }).catch(next);
@@ -30,6 +43,8 @@ router.delete("/:id", (request, response, next) => {
 });
 
 router.put("/:id", (request, response, next) => {
+    console.log(request.params.id)
+    console.log(request.body)
     queries.updateCar(request.params.id, request.body).then(car => {
         response.json({car});
     }).catch(next);
