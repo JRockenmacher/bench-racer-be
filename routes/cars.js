@@ -38,7 +38,7 @@ router.post("/", (request, response, next) => {
 
 router.delete("/:id", (request, response, next) => {
     queries.deleteCar(request.params.id).then(() => {
-        response.status(204).json({deleted: true});
+        response.status(200).json({deleted: true});
     }).catch(next);
 });
 
